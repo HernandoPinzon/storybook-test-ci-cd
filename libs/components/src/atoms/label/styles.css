@@ -1,0 +1,20 @@
+/* Estilos base para Label */
+.label {
+    display: inline-block;
+    font-family: Arial, sans-serif; /* Puedes cambiar la fuente según necesites */
+    color: #333; /* Este es un color de texto predeterminado, ajusta según tu diseño */
+  }
+  
+  /* Variantes de tamaño */
+  .size-small {
+    font-size: 12px; /* Ejemplo para tamaño pequeño */
+  }
+  
+  .size-medium {
+    font-size: 16px; /* Ejemplo para tamaño medio */
+  }
+  
+  .size-large {
+    font-size: 20px; /* Ejemplo para tamaño grande */
+  }
+  
