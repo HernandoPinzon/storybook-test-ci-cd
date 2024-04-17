@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { Button, Label, Checkbox } from '@myorg/components';
+import { Button, Label, Checkbox, Flicker, Tag } from '@myorg/components';
 
 export function Index() {
   /*
@@ -22,7 +22,18 @@ export function Index() {
         <Label size='large'>Large label</Label>
       </div>
       <div className={styles.checkboxes}>
-        <Checkbox ><Label size='large'>Large label</Label></Checkbox>
+        <Checkbox size='small'><Label size='large'>Large label</Label></Checkbox>
+        <Checkbox size='medium'><Label size='large'>Large label</Label></Checkbox>
+        <Checkbox size='large' type='rounded'><Label size='large'>Large label</Label></Checkbox>
+      </div>
+      <div className={styles.checkboxes}>
+        <Flicker>Hover me 2</Flicker>
+        <Flicker><Button type='primary'>Button</Button></Flicker>
+      </div>
+      <div className={styles.checkboxes}>
+        <Tag color='red'>Tag muy largooooo</Tag>
+        <Tag color='green'>Tag</Tag>
+        <Tag color='blue'><Label style={{color: 'white'}} size='large'>Large label</Label></Tag>
       </div>
       <div className='molecules'>
 

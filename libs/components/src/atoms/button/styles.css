@@ -16,14 +16,14 @@
 .type-outline {
     background: var(--colors-brand-onPrimary);
     color: var(--colors-brand-primary);
-    border: 1px solid var(--colors-brand-primary);
+    border: 2px solid var(--colors-brand-outline) !important;
 }
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--colors-transparent);
+    border: 2px solid var(--colors-transparent);
     padding: 10px 20px;
     border-radius: 50px;
     box-shadow: 0px 0px 5px var(--colors-brand-shadow);
