@@ -8,7 +8,7 @@ interface TagProps {
 
 }
 
-export const Tag = ({ children, color}: TagProps) => {
+export const Tag = ({ children, color = '#B0C6FF'}: TagProps) => {
     return (
         <span className='tag' style={{backgroundColor: color}}>
             {children}

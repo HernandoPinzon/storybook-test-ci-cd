@@ -6,6 +6,7 @@ interface CheckboxProps {
   initialChecked?: boolean;
   onChange?: (checked: boolean) => void;
   type?: 'rounded' | 'square';
+  id?: string;
   children: React.ReactNode;
   size?: 'small' | 'medium' | 'large';
   position?: 'left' | 'right';
@@ -17,6 +18,7 @@ export const Checkbox = ({
   type = 'square',
   size = 'medium',
   position = 'left',
+  id,
   children
 }: CheckboxProps) => {
   const [checked, setChecked] = useState(initialChecked);
@@ -40,7 +42,7 @@ export const Checkbox = ({
   return (
     <label className={classNameContainer}>
       {children}
-      <input onChange={handleChange} type="checkbox" checked={checked} hidden/>
+      <input id={id} onChange={handleChange} type="checkbox" checked={checked} hidden/>
       <div className={classNameCheckMark}></div>
     </label>
   );

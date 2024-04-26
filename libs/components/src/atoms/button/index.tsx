@@ -5,13 +5,22 @@ import React from 'react';
 export interface ButtonProps {
   children: React.ReactNode;
   type?: 'primary' | 'secondary' | 'tertiary' | 'outline';
+  shape?: 'rounded' | 'square';
   uppercase?: boolean;
+  onClick?: () => void;
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button = ({
+  children,
+  type = 'primary',
+  shape = 'rounded',
+  uppercase,
+  onClick,
+}: ButtonProps) => {
   const className = classNames('button', {
-    [`type-${props.type}`]: props.type,
-    uppercase: props.uppercase,
+    [`type-${type}`]: type,
+    [`button-shape-${shape}`]: shape,
+    uppercase: uppercase,
   });
-  return <button className={className}>{props.children}</button>;
+  return <button onClick={onClick} className={className}>{children}</button>;
 };

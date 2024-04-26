@@ -1,0 +1,25 @@
+
+.fileUploader {
+  .dropZone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
+  }
+
+  .fileInput {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  .fileInfo {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
