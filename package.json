@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build-storybook": "nx run components:build-storybook"
+    "build-storybook": "nx run components:build-storybook",
+    "start": "http-server ./libs/components/storybook-static -p 80"
   },
   "private": true,
   "devDependencies": {
