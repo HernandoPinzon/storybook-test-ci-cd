@@ -24,7 +24,7 @@ const CreateUser: React.FC = () => {
       (document.getElementById('userName') as HTMLInputElement).value
     )
     formData.append(
-       'email',
+      'email',
       (document.getElementById('userEmail') as HTMLInputElement).value
     )
     if (userIcon) formData.append('icon', userIcon)
