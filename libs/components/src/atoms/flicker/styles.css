@@ -1,5 +1,5 @@
 .flicker:hover {
-    filter: contrast(0.2);
-    border-radius: 4px;
-    cursor: pointer;
+  filter: contrast(0.2);
+  border-radius: 4px;
+  cursor: pointer;
 }

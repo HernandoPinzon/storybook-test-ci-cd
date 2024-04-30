@@ -26,5 +26,5 @@
     "**/*.test.ts",
     "**/*.stories.ts",
     "**/*.stories.js"
-  ],
+  ]
 }

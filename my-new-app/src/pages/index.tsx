@@ -1,34 +1,34 @@
-import styles from './index.module.scss';
-import { useRouter } from 'next/router';
+import styles from './index.module.scss'
+import { useRouter } from 'next/router'
 
-import { Button, Label, TodoListItem } from '@myorg/components';
-import { useEffect, useState } from 'react';
+import { Button, Label, TodoListItem } from '@myorg/components'
+import { useEffect, useState } from 'react'
 
 export function Index() {
-  const [tasks, setTasks] = useState(Array<any>());
-  const router = useRouter();
+  const [tasks, setTasks] = useState(Array<any>())
+  const router = useRouter()
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('http://localhost:1337/tasks'); // Asegúrate de usar la URL correcta de tu API de Strapi
-      setTasks(await response.json());
+      const response = await fetch('http://localhost:1337/tasks') // Asegúrate de usar la URL correcta de tu API de Strapi
+      setTasks(await response.json())
     } catch (error) {
-      console.error('Error fetching tasks:', error);
+      console.error('Error fetching tasks:', error)
       //por ahora
-      setTasks(taskData);
+      setTasks(taskData)
     }
-  };
+  }
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+    fetchTasks()
+  }, [])
 
   const handleCreateTaskClick = () => {
-    router.push('/create-task');
-  };
+    router.push('/create-task')
+  }
   const handleCreateUserClick = () => {
-    router.push('/create-user');
-  };
+    router.push('/create-user')
+  }
   return (
     <>
       <div className={styles.header}>
@@ -43,7 +43,7 @@ export function Index() {
         </Button>
       </div>
       <div className={styles.molecules}>
-        {tasks.map((task) => (
+        {tasks.map(task => (
           <TodoListItem
             key={task.id}
             id={task.id.toString()}
@@ -54,7 +54,7 @@ export function Index() {
         ))}
       </div>
     </>
-  );
+  )
 }
 
 const taskData = [
@@ -83,6 +83,6 @@ const taskData = [
     title: 'Task 5',
     tags: ['tag9', 'tag10'],
   },
-];
+]
 
-export default Index;
+export default Index

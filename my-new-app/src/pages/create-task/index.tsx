@@ -1,56 +1,56 @@
-import { Button, Label, Input, TextArea } from '@myorg/components';
-import styles from './index.module.scss';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { Button, Label, Input, TextArea } from '@myorg/components'
+import styles from './index.module.scss'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 export default function CreateTask() {
-  const router = useRouter();
+  const router = useRouter()
 
   const handleCreateTaskClick = () => {
-    router.back();
-  };
+    router.back()
+  }
 
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     tags: Array<string>(),
-  });
+  })
 
-  const [taskText, setTaskText] = useState('');
+  const [taskText, setTaskText] = useState('')
 
   const handleTaskTitleChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, title: value }));
-  };
+    setFormData(prev => ({ ...prev, title: value }))
+  }
   const handleTaskDescriptionChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, description: value }));
-  };
+    setFormData(prev => ({ ...prev, description: value }))
+  }
   const handleTaskTagsAdd = () => {
     if (taskText) {
-      setFormData((prev) => ({
+      setFormData(prev => ({
         ...prev,
         tags: [...prev.tags, taskText],
-      }));
-      setTaskText('');
+      }))
+      setTaskText('')
     }
-  };
+  }
   const handleTaskTagsChange = (value: string) => {
-    setTaskText(value);
-  };
+    setTaskText(value)
+  }
 
   const resetForm = () => {
     setFormData({
       title: '',
       description: '',
       tags: [],
-    });
-    setTaskText('');
-  };
+    })
+    setTaskText('')
+  }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    resetForm();
-  };
+    event.preventDefault()
+    console.log('Form Data Submitted:', formData)
+    resetForm()
+  }
 
   return (
     <div className={styles.pageCreateTask}>
@@ -67,7 +67,11 @@ export default function CreateTask() {
           <label htmlFor="taskTitle" className={styles.label}>
             Title:
           </label>
-          <Input value={formData.title} onChangeValue={handleTaskTitleChange} id="taskTitle"></Input>
+          <Input
+            value={formData.title}
+            onChangeValue={handleTaskTitleChange}
+            id="taskTitle"
+          ></Input>
         </div>
         <div>
           <label htmlFor="taskDescription" className={styles.label}>
@@ -83,7 +87,11 @@ export default function CreateTask() {
           <label htmlFor="taskTags" className={styles.label}>
             Tags:
           </label>
-          <Input value={taskText} onChangeValue={handleTaskTagsChange} id="taskTags"></Input>
+          <Input
+            value={taskText}
+            onChangeValue={handleTaskTagsChange}
+            id="taskTags"
+          ></Input>
           <button
             onClick={handleTaskTagsAdd}
             type="button"
@@ -107,5 +115,5 @@ export default function CreateTask() {
         </button>
       </form>
     </div>
-  );
+  )
 }
