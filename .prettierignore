@@ -3,3 +3,5 @@
 /coverage
 /.nx/cache
 /.github
+/libs/components/storybook-static
+/my-new-app/.next/
